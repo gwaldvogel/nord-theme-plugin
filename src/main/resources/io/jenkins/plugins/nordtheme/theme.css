@@ -147,6 +147,38 @@ pre {
   font-family: 'Roboto Mono', monospace;
 }
 
+table.bigtable {
+  border-color: var(--bigtable-row-border-color);
+}
+
+#jenkins table.sortable.jch a.sortheader {
+  background-color: transparent;
+}
+
+#jenkins table.jch {
+  border: 0 none;
+}
+
+.jch.navigation {
+  background-color: transparent;
+}
+
+.jch .menu-url-button {
+  background-color: var(--btn-primary-bg);
+}
+
+#jenkins .jch-footer .footer-content-wrapper,
+#jenkins table.jch .caption {
+  background-color: var(--dark-theme-bg-333);
+  border-color: var(--bigtable-row-border-color);
+}
+
+#jenkins table.jch th,
+#jenkins table.jch td {
+  border-color: var(--bigtable-row-border-color);
+  background-color: var(--dark-theme-bg-dark);
+}
+
 #add-item-panel .add-item-name .input-help,
 #add-item-panel .add-item-copy .input-help {
   color: var(--text-color-secondary);
@@ -165,6 +197,11 @@ pre {
   background-color: var(--dark-theme-bg-333) !important;
   border: 0 none !important;
   color: var(--link-color);
+}
+
+.ownership-summary-box {
+  background-color: var(--dark-theme-bg-333) !important;
+  border: 0 none;
 }
 
 /**
