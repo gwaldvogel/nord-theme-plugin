@@ -1,11 +1,11 @@
-package io.jenkins.plugins.darktheme;
+package io.jenkins.plugins.nordtheme;
 
 import hudson.Extension;
 import hudson.model.UnprotectedRootAction;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.Objects;
+
 import org.apache.commons.io.IOUtils;
 import org.kohsuke.accmod.Restricted;
 import org.kohsuke.accmod.restrictions.NoExternalUse;
@@ -13,14 +13,12 @@ import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
 import org.kohsuke.stapler.WebMethod;
 
-import static io.jenkins.plugins.darktheme.DarkThemeManagerFactory.THEME_CSS;
-import static io.jenkins.plugins.darktheme.DarkThemeManagerFactory.THEME_URL_NAME;
-import static io.jenkins.plugins.darktheme.DarkThemeSystemManagerFactory.THEME_SYSTEM_CSS;
+import static io.jenkins.plugins.nordtheme.NordThemeManagerFactory.*;
 import static java.util.Objects.requireNonNull;
 
 @Extension
 @Restricted(NoExternalUse.class)
-public class DarkThemeRootAction implements UnprotectedRootAction {
+public class NordThemeRootAction implements UnprotectedRootAction {
 
     @Override
     public String getIconFileName() {
@@ -46,12 +44,11 @@ public class DarkThemeRootAction implements UnprotectedRootAction {
             res.getWriter().print(s1);
         }
     }
-
-    @WebMethod(name = THEME_SYSTEM_CSS)
-    public void doDarkThemeSystemCss(StaplerRequest req, StaplerResponse res) throws IOException {
-        try (InputStream themeInputStream = getClass().getResourceAsStream(THEME_SYSTEM_CSS)) {
+    @WebMethod(name = NORD_CSS)
+    public void doNordCss(StaplerRequest req, StaplerResponse res) throws IOException {
+        try (InputStream themeInputStream = getClass().getResourceAsStream(NORD_CSS)) {
             res.setContentType("text/css");
-            Objects.requireNonNull(themeInputStream);
+            requireNonNull(themeInputStream);
             String s1 = IOUtils.toString(themeInputStream, StandardCharsets.UTF_8);
             res.getWriter().print(s1);
         }

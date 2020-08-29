@@ -1,36 +1,45 @@
+@import "nord.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Mono:wght@300&display=swap');
+
 :root {
-  --dark-theme-bg-black: #111;
-  --dark-theme-bg-dark: #222;
-  --dark-theme-bg-medium: #2d2b2b;
-  --dark-theme-bg-333: #333;
+  --primary: var(--nord8);
+  --dark-theme-bg-black: var(--nord0);
+  --dark-theme-bg-dark: var(--nord1);
+  --dark-theme-bg-medium: var(--nord2);
+  --dark-theme-bg-333: var(--nord3);
   --background: var(--dark-theme-bg-dark);
   --very-light-grey: var(--dark-theme-bg-dark);
   --light-grey: var(--dark-theme-bg-333);
   --medium-grey: var(--dark-theme-bg-333);
 
   /* Text */
-  --text-color: #c0c0c0;
-  --text-color-secondary: var(--text-color);
-  --call-to-action-text-color: var(--dark-theme-bg-medium);
-  --call-to-action-link-color: var(--call-to-action-text-color);
+  --text-color: var(--nord6);
+  --text-color-secondary: var(--nord5);
+  --text-color-dark: var(--nord3);
+  --call-to-action-text-color: var(--text-color-dark);;
+  --call-to-action-link-color: var(--text-color-dark);;
 
   /* Alerts */
-  --alert-success-text-color: #fff;
-  --alert-success-bg-color: #007e33;
+  --alert-success-text-color: var(--text-color-dark);
+  --alert-success-bg-color: var(--nord14);
   --alert-success-border-color: var(--alert-success-bg-color);
-  --alert-info-text-color: #fff;
-  --alert-info-bg-color: #0099cc;
+  --alert-info-text-color: var(--text-color-dark);
+  --alert-info-bg-color: var(--nord7);
   --alert-info-border-color: var(--alert-info-bg-color);
-  --alert-warning-text-color: #fff;
-  --alert-warning-bg-color: #ff8800;
+  --alert-warning-text-color: var(--text-color-dark);
+  --alert-warning-bg-color: var(--nord13);
   --alert-warning-border-color: var(--alert-warning-bg-color);
-  --alert-danger-text-color: #fff;
-  --alert-danger-bg-color: #cc0000;
+  --alert-danger-text-color: var(--nord4);
+  --alert-danger-bg-color: var(--nord11);
   --alert-danger-border-color: var(--alert-danger-bg-color);
 
   /* Buttons */
-  --btn-secondary-bg: var(--dark-theme-bg-dark);
-  --btn-secondary-color: var(--btn-primary-color);
+  --btn-text-color: var(--nord1);
+  --btn-primary-bg: var(--nord8);
+  --btn-primary-bg-hover: var(--nord7);
+  --btn-secondary-bg: var(--nord2);
+  --btn-secondary-color: var(--nord5);
+  --btn-secondary-color-hover: var(--nord6);
   --btn-link-bg--hover: var(--dark-theme-bg-333);
   --btn-link-bg--active: var(--dark-theme-bg-333);
 
@@ -42,6 +51,7 @@
   --logo-bg: var(--dark-theme-bg-dark);
   --brand-link-color: var(--primary);
   --header-bg-v2: var(--dark-theme-bg-medium);
+  --header-bg-classic: var(--dark-theme-bg-medium);
   --header-link-color: var(--text-color);
   --header-link-color-active: var(--text-color);
   --search-bg: #4d545d;
@@ -55,15 +65,15 @@
   --breadcrumbs-border: var(--dark-theme-bg-333);
 
   /* Links */
-  --link-color: var(--primary);
-  --link-visited-color: var(--primary);
+  --link-color: var(--nord8);
+  --link-visited-color: var(--nord7);
 
   /* Table */
   --bigtable-header-bg: var(--dark-theme-bg-black);
   --bigtable-header-border-color: var(--dark-theme-bg-333);
   --bigtable-header-text-color: var(--text-color);
   --bigtable-row-border-color: var(--dark-theme-bg-333);
-  --even-row-color: #020202;
+  --even-row-color: var(--dark-theme-bg-black);
   --table-striped-bg--hover: var(--dark-theme-bg-333);
 
   /* Pane widget */
@@ -97,7 +107,7 @@
 
   /* Pop out menus */
   --menu-bg-color: var(--dark-theme-bg-333);
-  --menu-text-color: var(--primary);
+  --menu-text-color: var(--link-color);
   --menu-selected-color: var(--dark-theme-bg-dark);
   --menu-box-shadow: none;
 
@@ -128,6 +138,33 @@
 
   /* Auto complete */
   --auto-complete-bg-color--prehighlight: var(--primary);
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+pre {
+  font-family: 'Roboto Mono', monospace;
+}
+
+#add-item-panel .add-item-name .input-help,
+#add-item-panel .add-item-copy .input-help {
+  color: var(--text-color-secondary);
+}
+
+#visible-am-container #visible-am-list .alert-info a:visited {
+  color: var(--nord3);
+}
+
+#visible-am-container #visible-am-list .alert-info a:link {
+  color: var(--nord2);
+}
+
+.yuimenu .topscrollbar,
+.yuimenu .bottomscrollbar {
+  background-color: var(--dark-theme-bg-333) !important;
+  border: 0 none !important;
+  color: var(--link-color);
 }
 
 /**

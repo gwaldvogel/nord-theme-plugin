@@ -1,4 +1,4 @@
-package io.jenkins.plugins.darktheme;
+package io.jenkins.plugins.nordtheme;
 
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
@@ -8,12 +8,14 @@ import io.jenkins.plugins.thememanager.ThemeManagerFactoryDescriptor;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
 
-public class DarkThemeSystemManagerFactory extends ThemeManagerFactory {
+public class NordThemeManagerFactory extends ThemeManagerFactory {
 
-    public static final String THEME_SYSTEM_CSS = "theme-system.css";
+    public static final String THEME_CSS = "theme.css";
+    public static final String NORD_CSS = "nord.css";
+    public static final String THEME_URL_NAME = "theme-nord";
 
     @DataBoundConstructor
-    public DarkThemeSystemManagerFactory() {
+    public NordThemeManagerFactory() {
     }
 
     @Override
@@ -22,31 +24,26 @@ public class DarkThemeSystemManagerFactory extends ThemeManagerFactory {
                 .withCssUrl(getCssUrl())
                 .build();
     }
-    
+
     @Extension
-    @Symbol("darkSystem")
-    public static class DarkThemeSystemManagerFactoryDescriptor extends ThemeManagerFactoryDescriptor {
-        
+    @Symbol("dark")
+    public static class DarkThemeManagerFactoryDescriptor extends ThemeManagerFactoryDescriptor {
+
         @NonNull
         @Override
         public String getDisplayName() {
-            return "Dark (Respect OS/Browser system setting)";
+            return "Nord";
         }
 
         @Override
-        public String getThemeCssSuffix() {
-            return "theme-system.css";
-        }
-        
-        @Override
         public ThemeManagerFactory getInstance() {
-            return new DarkThemeSystemManagerFactory();
+            return new NordThemeManagerFactory();
         }
 
         @NonNull
         @Override
         public String getThemeId() {
-            return "dark";
+            return "nord";
         }
     }
 }

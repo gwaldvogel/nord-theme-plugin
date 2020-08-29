@@ -1,11 +1,11 @@
-package io.jenkins.plugins.darktheme.jcasc.dark;
+package io.jenkins.plugins.nordtheme.jcasc.nord;
 
 import io.jenkins.plugins.casc.ConfigurationContext;
 import io.jenkins.plugins.casc.ConfiguratorRegistry;
 import io.jenkins.plugins.casc.misc.ConfiguredWithCode;
 import io.jenkins.plugins.casc.misc.JenkinsConfiguredWithCodeRule;
 import io.jenkins.plugins.casc.model.CNode;
-import io.jenkins.plugins.darktheme.DarkThemeManagerFactory;
+import io.jenkins.plugins.nordtheme.NordThemeManagerFactory;
 import io.jenkins.plugins.thememanager.ThemeManagerFactory;
 import io.jenkins.plugins.thememanager.ThemeManagerPageDecorator;
 import org.junit.ClassRule;
@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertNotNull;
 
-public class DarkThemeJcascTest {
+public class NordThemeJcascTest {
 
   @ClassRule
   @ConfiguredWithCode("ConfigurationAsCode.yml")
@@ -33,7 +33,7 @@ public class DarkThemeJcascTest {
     assertNotNull(theme);
 
     assertThat(decorator.isDisableUserThemes(), is(true));
-    assertThat(theme, instanceOf(DarkThemeManagerFactory.class));
+    assertThat(theme, instanceOf(NordThemeManagerFactory.class));
   }
 
   @Test
